@@ -1,16 +1,33 @@
-# React + Vite
+# Interactive Dog Mat – Prototype 1
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> Project proposal: [MakerRepo](https://makerepo.com/project_proposals/620.interactive-dog-mat)
 
-Currently, two official plugins are available:
+This term, we are building an interactive dog mat and companion app with a client to ease communication between dogs and their owners. Accessibility is central to the project, but the design is universal.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Our first prototype tests our riskiest assumption: the integration between software and hardware. In other words, **can an input in the web app be reflected on an external component?**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How It Works
 
-## Expanding the Oxlint configuration
+- **Frontend:** a Vite + React web app.
+- **Connection:** clicking the enable button prompts you to pick a serial port, which becomes available when the Arduino Uno is connected to your laptop over USB.
+- **Firmware:** a C++ program loaded onto the Arduino Uno that receives the app's input and acts on it.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## Getting Started
+
+1. Upload the C++ sketch to the Arduino Uno.
+2. Install dependencies and start the app:
+   ```bash
+   npm install
+   npm run dev
+   ```
+3. Open the app at http://localhost:5173/, click the enable button, and select the Arduino's port.
+
+---
+
+<div align="center">
+    Built as part of <b>GNG2101 (Product Development for Engineers and Computer Scientists)</b>, Fall 2026
+</div>
