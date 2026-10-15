@@ -207,7 +207,7 @@ function App() {
           >
 
             <div className="light-icon">
-              ☀
+              <img src="/sun-icon.png" alt="" />
             </div>
 
             <h2>Lights</h2>
@@ -240,12 +240,14 @@ function App() {
               {demoMode ? '✓ Demo Mode Enabled' : 'Try Demo Mode'}
             </button>
 
-            {demoMode && (
-              <p className="demo-description">
-                Demo Mode is active. The Lights button controls
-                the interface only, not a physical LED.
-              </p>
-            )}
+            <p
+              className="demo-description"
+              style={{ visibility: demoMode ? 'visible' : 'hidden' }}
+              aria-hidden={!demoMode}
+            >
+              Demo Mode is active. The Lights button controls
+              the interface only, not a physical LED.
+            </p>
 
           </div>
         )}
@@ -256,11 +258,6 @@ function App() {
             {error}
           </p>
         )}
-
-        {/* Footer */}
-        <footer className="footer">
-          <span>🐾 Paw Unit</span>
-        </footer>
 
       </div>
 
